@@ -14,3 +14,20 @@ cd driftwood
 pip install file://`pwd`
 ```
 **Note:** To use mongodb logging, you must install the mongoengine module.  Tested with 0.8.7
+
+## Examples ##
+
+### JSON Formatter ###
+This is a great way to easily log in a machine-parsable format.
+While the example uses a StreamHandler for brevity, the most common
+production implementation is using a a RotatingFileHandler.
+```python
+import logging
+from driftwood.formatters.json import JSONFormatter
+log = logging.getLogger("test")
+handler = logging.StreamHandler()
+json_formatter = JSONFormatter()
+handler.setFormatter(json_formatter)
+log.addHandler(handler)
+log.warning("uh oh")
+```
