@@ -13,3 +13,4 @@ git clone https://github.com/HurricaneLabs/driftwood.git
 cd driftwood
 pip install file://`pwd`
 ```
+**Note:** To use mongodb logging, you must install the mongoengine module.  Tested with 0.8.7
