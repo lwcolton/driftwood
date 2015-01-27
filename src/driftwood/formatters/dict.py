@@ -1,8 +1,16 @@
 import logging
 
 class DictFormatter(logging.Formatter):
-    """Used for formatting log records into a dict."""
+    """Used for formatting log records into a dict.
+
+    .. automethod:: __init__
+    """
     def __init__(self, *args, extra_attrs=[], **kwargs):
+        """
+        Args:
+            extra_attrs (list): A list of strings specifying additional arguments that may exists
+                on the log record instances and should be included in the messages.
+        """
         super().__init__(*args, **kwargs)
         self.useful_attrs = ["name","levelno","levelname","pathname","filename","module","lineno",
         "funcName","created","asctime","msecs","relativeCreated","thread","threadName",
