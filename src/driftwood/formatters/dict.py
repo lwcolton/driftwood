@@ -1,6 +1,7 @@
 import logging
 
 class DictFormatter(logging.Formatter):
+    """Used for formatting log records into a dict."""
     def __init__(self, *args, extra_attrs=[], **kwargs):
         super().__init__(*args, **kwargs)
         self.useful_attrs = ["name","levelno","levelname","pathname","filename","module","lineno",
