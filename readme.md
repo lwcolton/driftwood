@@ -11,6 +11,5 @@
 ```shell
 git clone https://github.com/HurricaneLabs/driftwood.git
 cd driftwood
-git checkout release
 pip install file://`pwd`
 ```
