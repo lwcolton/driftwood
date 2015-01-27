@@ -2,7 +2,7 @@ import logging
 
 import mongoengine
 
-from diary.handlers.dict import DictHandler
+from driftwood.handlers.dict import DictHandler
 
 class BaseLogRecord(mongoengine.Document):
     meta = {'allow_inheritance': True, 'abstract': True}

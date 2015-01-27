@@ -1,6 +1,6 @@
 import logging
 
-from diary.formatters import DictFormatter
+from driftwood.formatters import DictFormatter
 
 class DictHandler(logging.Handler):
     def __init__(self, *args, extra_attrs=[], **kwargs):
