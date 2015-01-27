@@ -15,5 +15,5 @@ class DictHandler(logging.Handler):
         self._dict_formatter = DictFormatter(extra_attrs=extra_attrs)
 
     def emit(self, record):
-        """emits things"""
+        """Super this in your subclass to format the record into a dict"""
         return self._dict_formatter.format(record)
