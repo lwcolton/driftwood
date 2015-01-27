@@ -7,8 +7,9 @@ class DictFormatter(logging.Formatter):
     """
     def __init__(self, *args, extra_attrs=[], **kwargs):
         """
-        Args:
-            extra_attrs (list): A list of strings specifying additional arguments that may exists on the log record instances and should be included in the messages.
+        :param list extra_attrs: A list of strings specifying additional
+            arguments that may exist on the log record instances and
+            should be included in the messages.
         """
         super().__init__(*args, **kwargs)
         self.useful_attrs = ["name","levelno","levelname","pathname","filename","module","lineno",
