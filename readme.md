@@ -2,7 +2,7 @@
 **A collection of python logging extensions**
 
 ## Features ##
-- Compatible with Python 3 (Only)
+- Compatible with Python 3 (only)
 - Provides Dictionary, JSON, and MongoDB logging
 - Features for logging custom attributes
 - Can notify of status changes based on the level of messages being logged
