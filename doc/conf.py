@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# driftwood documentation build configuration file, created by
-# sphinx-quickstart on Tue Jan 27 10:32:59 2015.
+# Driftwood documentation build configuration file, created by
+# sphinx-quickstart on Tue Jan 27 11:43:50 2015.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -19,8 +19,8 @@ import os
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('../src'))
+sys.path.insert(0, os.path.abspath('src'))
 
 # -- General configuration ------------------------------------------------
 
@@ -48,7 +48,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'driftwood'
+project = 'Driftwood'
 copyright = '2015, Hurricane Labs'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -181,7 +181,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'driftwooddoc'
+htmlhelp_basename = 'Driftwooddoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -201,7 +201,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'driftwood.tex', 'driftwood Documentation',
+  ('index', 'Driftwood.tex', 'Driftwood Documentation',
    'Hurricane Labs', 'manual'),
 ]
 
@@ -231,7 +231,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'driftwood', 'driftwood Documentation',
+    ('index', 'driftwood', 'Driftwood Documentation',
      ['Hurricane Labs'], 1)
 ]
 
@@ -245,8 +245,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'driftwood', 'driftwood Documentation',
-   'Hurricane Labs', 'driftwood', 'One line description of project.',
+  ('index', 'Driftwood', 'Driftwood Documentation',
+   'Hurricane Labs', 'Driftwood', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -266,13 +266,13 @@ texinfo_documents = [
 # -- Options for Epub output ----------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = 'driftwood'
+epub_title = 'Driftwood'
 epub_author = 'Hurricane Labs'
 epub_publisher = 'Hurricane Labs'
 epub_copyright = '2015, Hurricane Labs'
 
 # The basename for the epub file. It defaults to the project name.
-#epub_basename = 'driftwood'
+#epub_basename = 'Driftwood'
 
 # The HTML theme for the epub output. Since the default themes are not optimized
 # for small screen space, using the same theme for HTML and epub output is

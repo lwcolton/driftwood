@@ -1,6 +1,6 @@
 import logging
 
-from driftwood.formatters import DictFormatter
+from driftwood.formatters.dict import DictFormatter
 
 class DictHandler(logging.Handler):
     """Formats log records into a dict.
@@ -15,4 +15,5 @@ class DictHandler(logging.Handler):
         self._dict_formatter = DictFormatter(extra_attrs=extra_attrs)
 
     def emit(self, record):
+        """emits things"""
         return self._dict_formatter.format(record)
