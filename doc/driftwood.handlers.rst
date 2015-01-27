@@ -12,6 +12,14 @@ driftwood.handlers.dict module
     :undoc-members:
     :show-inheritance:
 
+driftwood.handlers.mongo module
+-------------------------------
+
+.. automodule:: driftwood.handlers.mongo
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
 Module contents
 ---------------
