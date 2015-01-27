@@ -12,6 +12,14 @@ driftwood.formatters.dict module
     :undoc-members:
     :show-inheritance:
 
+driftwood.formatters.json module
+--------------------------------
+
+.. automodule:: driftwood.formatters.json
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
 Module contents
 ---------------
