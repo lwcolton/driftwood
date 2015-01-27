@@ -16,6 +16,6 @@ setup(
 	author = "Colton Leekley-Winslow",
 	author_email = "colton@hurricanelabs.com",
 	package_dir = {"":"src"},
-	packages = find_packages("src")
+	packages = find_packages("src"),
 )
 
