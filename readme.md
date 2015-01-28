@@ -8,7 +8,7 @@
 - Can notify of status changes based on the level of messages being logged
 
 ## Installing ##
-`pip install git+https://github.com/HurricaneLabs/driftwood.git`
+`pip install git+https://github.com/HurricaneLabs/driftwood.git`  
 **Note:** To use mongodb logging, you must install the mongoengine module.  Tested with 0.8.7
 
 ## Examples ##
