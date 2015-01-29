@@ -38,7 +38,7 @@ class LogRecord(BaseLogRecord):
 class MongoHandler(DictHandler):
     """A handler that will log to MongoDB for you.
 
-    .. automethod: __init__
+    .. automethod:: __init__
     """
     def __init__(self, *args, document=LogRecord, **kwargs):
         """
