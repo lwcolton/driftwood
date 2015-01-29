@@ -7,7 +7,7 @@ Table of Contents
     Adapters <driftwood.adapters>
     Formatters <driftwood.formatters>
     Handlers <driftwood.handlers>
-    `API reference <modindex>`
+:ref:`API reference <modindex>`
 
 .. include:: ../README.rst
     :start-after: `Full Documentation <http://driftwood.readthedocs.org/en/latest/>`_
