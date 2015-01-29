@@ -1,8 +1,10 @@
 .. include:: ../README.rst
-    :lines: 2-
+    :start-after: Full Documentation
 
 Table of Contents
 =================
 
 .. toctree::
-    :titlesonly:
+    :maxdepth: 1
+
+    driftwood
