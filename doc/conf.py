@@ -39,7 +39,10 @@ imports_patch = mock.patch.dict("sys.modules", values=mock_mod_dict).start()
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
+    'sphinx.ext.intersphinx'
 ]
+
+intersphinx_mapping = {'python': ('http://docs.python.org/3.4', None)}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
