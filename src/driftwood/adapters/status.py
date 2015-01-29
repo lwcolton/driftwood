@@ -1,6 +1,4 @@
 """
-.. autoclass:: StatusUpdateAdapter
-  :exclude-members: log
 """
 import logging
 
