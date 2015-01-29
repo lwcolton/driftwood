@@ -28,8 +28,6 @@ class LogRecord(BaseLogRecord):
 class MongoHandler(DictHandler):
     def __init__(self, *args, document=None, **kwargs):
         super().__init__(*args, **kwargs)
-        if not document:
-            raise AttributeError("document is required")
         if document == None:
             document = LogRecord
         self.document = document

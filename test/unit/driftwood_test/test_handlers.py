@@ -25,15 +25,13 @@ class TestMongoHandler:
     @params(*[{uuid.uuid4().hex:uuid.uuid4().hex for x in range(0,random.randrange(5,10))} for x in range(0,6)])
     def test_generic_1(self, extra): 
         record = util.random_log_record(extra)
-        print(mock_doc)
         mock_doc = mock.MagicMock()
         with mock.patch("driftwood.handlers.mongo.LogRecord") as mock_LogRecord:
             mock_LogRecord.return_value = mock_doc
-            handler = MongoHandler()
-        log = logging.getLogger(uuid.uuid4().hex)
-        print (handler.document)
-        if not log.hasHandlers():
-            log.addHandler(handler)
-        
-        
-        
+            handler = MongoHandler(extra_attrs=list(extra.keys()))
+        handler.emit(record)
+        for key in util.regular_attrs:
+            assert type(getattr(mock_doc, key)).__name__ != "MagicMock"
+        for extra_key, extra_val in extra.items():
+            assert getattr(mock_doc, extra_key) == extra_val
+        mock_doc.save.assert_called_once_with()
