@@ -1,5 +1,5 @@
 .. include:: ../README.rst
-    :start-after: Full Documentation
+    :lines: 2-
 
 Table of Contents
 =================
