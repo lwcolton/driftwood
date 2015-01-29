@@ -42,6 +42,8 @@ extensions = [
     'sphinx.ext.intersphinx'
 ]
 
+autodoc_default_flags = ["no-undoc-members"]
+
 intersphinx_mapping = {'python': ('http://docs.python.org/3.4', None)}
 
 # Add any paths that contain templates here, relative to this directory.
