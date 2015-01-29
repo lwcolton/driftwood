@@ -5,6 +5,6 @@ Table of Contents
 =================
 
 .. toctree::
-   :maxdepth: 1
+    :titlesonly:
    
    API Reference <modindex>
