@@ -1,4 +1,4 @@
-`Full Documentation <http://driftwood.readthedocs.org/en/latest/>_`
+`Full Documentation <http://driftwood.readthedocs.org/en/latest/>`_
 
 #########
 Driftwood
