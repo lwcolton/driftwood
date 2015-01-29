@@ -8,3 +8,4 @@ Table of Contents
     :titlesonly:
 
     driftwood
+    api <modindex>
