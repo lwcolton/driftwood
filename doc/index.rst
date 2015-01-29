@@ -6,12 +6,5 @@ Table of Contents
 
 .. toctree::
    :maxdepth: 1
-
-   driftwood
-
-
-Indices and tables
-==================
-
-* :ref:`modindex`
-
+   
+   API Reference <modindex>
