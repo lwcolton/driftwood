@@ -10,14 +10,14 @@ Features
 - Features for logging custom attributes
 - Can notify of status changes based on the level of messages being logged
 
-
-
 Get Driftwood
 =============
 
 .. code-block:: shell
 
     pip install git+https://github.com/HurricaneLabs/driftwood.git
+
+**Note:** To use mongodb logging, you must install the mongoengine module.  Tested with 0.8.7
 
 Run the tests
 =============
@@ -29,8 +29,6 @@ Assumes you have Driftwood already installed
     git clone https://github.com/HurricaneLabs/driftwood.git
     cd driftwood/test/unit
     nose2
-
-
 
 Examples
 --------
@@ -55,6 +53,4 @@ Produces (as a string, not a dict):
 .. code-block:: json
 
     {"created": 1422386241.4394472, "pathname": "<stdin>", "message": "uh oh", "threadName": "MainThread", "levelname": "WARNING", "process": 4384, "module": "<stdin>", "thread": 139785634490176, "levelno": 30, "msecs": 439.44716453552246, "filename": "<stdin>", "lineno": 1, "relativeCreated": 52455.650329589844, "funcName": "<module>", "name": "test"}
-
-
 
