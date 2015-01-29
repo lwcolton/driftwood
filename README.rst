@@ -1,9 +1,6 @@
 .. role:: bash(code)
     :language: bash
 
-.. role:: python(code):
-    :language: python
-
 =========
 Driftwood
 =========
@@ -18,7 +15,6 @@ Examples
 
 JSON Formatter
 --------------
-:python:``import logging
-from driftwood.formatters.json import JSONFormatter
-``
-
+.. code:: python
+    import logging
+    from driftwood.formatters.json import JSONFormatter
