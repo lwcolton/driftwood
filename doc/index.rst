@@ -5,7 +5,7 @@ Table of Contents
 =================
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 1
 
    driftwood
 
@@ -13,7 +13,5 @@ Table of Contents
 Indices and tables
 ==================
 
-* :ref:`genindex`
 * :ref:`modindex`
-* :ref:`search`
 
