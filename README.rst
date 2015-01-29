@@ -28,7 +28,7 @@ This code example:
     log.addHandler(handler)
     log.warning("uh oh")
 
-Produces:
+Produces (as a string, not a dict):
 
 .. code-block:: json
 
