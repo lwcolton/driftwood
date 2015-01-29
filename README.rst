@@ -15,7 +15,7 @@ Get Driftwood
 
     pip install git+https://github.com/HurricaneLabs/driftwood.git
 
-Running the tests
+Run the tests
 -----------------
 Assumes you have Driftwood already installed
 
