@@ -18,7 +18,7 @@ Examples
 
 JSON Formatter
 --------------
-:python:
+:python::
     import logging
     from driftwood.formatters.json import JSONFormatter
 
