@@ -15,6 +15,8 @@ Examples
 
 JSON Formatter
 --------------
+This code example:
+
 .. code-block:: python
 
     import logging
@@ -26,7 +28,7 @@ JSON Formatter
     log.addHandler(handler)
     log.warning("uh oh")
 
-Produces
+Produces:
 
 .. code-block:: json
 
