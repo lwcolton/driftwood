@@ -12,11 +12,8 @@ Features
 
 
 
-Installing
-==========
-
 Get Driftwood
--------------
+=============
 
 .. code-block:: shell
 
