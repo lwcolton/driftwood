@@ -22,7 +22,7 @@ class BaseLogRecord(mongoengine.Document):
     thread = meng.LongField()
     module = meng.StringField()
 
-class GenericLogRecord(BaseLogRecord):
+class LogRecord(BaseLogRecord):
     pass
 
 class MongoHandler(DictHandler):
@@ -31,7 +31,7 @@ class MongoHandler(DictHandler):
         if not document:
             raise AttributeError("document is required")
         if document == None:
-            document = GenericLogRecord
+            document = LogRecord
         self.document = document
 
     def emit(self, record):
