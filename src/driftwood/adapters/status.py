@@ -3,8 +3,7 @@ import logging
 class StatusUpdateAdapter(logging.LoggerAdapter):
     """Used to notify a callback about changes in the loglevel of a program.
 
-    Will call a callback function when a program logs a message of 
-    increasing severity.
+    .. automethod:: __init__
     """
     def __init__(self, status_update_func, logger, extra={}):
         """
