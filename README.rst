@@ -7,7 +7,7 @@ Driftwood
 **A collection of python logging extensions**
 
 Features
---------
+========
 - Compatible with Python 3 (only)
 - Provides Dictionary, JSON, and MongoDB logging
 - Features for logging custom attributes
@@ -16,16 +16,16 @@ Features
 
 
 Installing
-==========
+----------
 
 Get Driftwood
--------------
+=============
 .. code-block:: shell
 
     pip install git+https://github.com/HurricaneLabs/driftwood.git
 
 Run the tests
------------------
+=============
 Assumes you have Driftwood already installed
 
 .. code-block:: shell
@@ -38,10 +38,10 @@ Assumes you have Driftwood already installed
 
 
 Examples
-========
+--------
 
 JSON Formatter
---------------
+==============
 This code example:
 
 .. code-block:: python
