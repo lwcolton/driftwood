@@ -1,5 +1,8 @@
 .. role:: bash(code)
-   :language: bash
+    :language: bash
+
+.. role:: python(code):
+    :language: python
 
 =========
 Driftwood
@@ -9,3 +12,13 @@ Driftwood
 Installing
 ==========
 :bash:`pip install git+https://github.com/HurricaneLabs/driftwood.git`
+
+Examples
+========
+
+JSON Formatter
+--------------
+:python:
+    import logging
+    from driftwood.formatters.json import JSONFormatter
+
