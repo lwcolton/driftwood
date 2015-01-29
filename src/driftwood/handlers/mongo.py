@@ -35,7 +35,7 @@ class MongoHandler(DictHandler):
         self.document = document
 
     def emit(self, record):
-        msg_dict = self._dict_formatter.format(record)
+        msg_dict = super().emit(record)
         log_doc = self.document()
         for msg_key, msg_value in msg_dict.items():
             setattr(log_doc, msg_key, msg_value)

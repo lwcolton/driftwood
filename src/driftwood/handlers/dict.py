@@ -8,13 +8,14 @@ class DictHandler(logging.Handler):
     Meant to be subclassed.  
     This is just a convenience wrapper around :py:class:`driftwood.formatters.dict.DictFormatter`.
     """
-    def __init__(self, *args, extra_attrs=[], **kwargs):
+    def __init__(self, *args, regular_attrs=None, extra_attrs=[], **kwargs):
         """
         Args:
             extra_attrs (list): String names of extra attributes that may exist on the log record.
         """
         super().__init__(*args, **kwargs)
-        self._dict_formatter = DictFormatter(extra_attrs=extra_attrs)
+        self._dict_formatter = DictFormatter(regular_attrs=regular_attrs,
+            extra_attrs=extra_attrs)
 
     def emit(self, record):
         """Super this in your subclass to format the record into a dict"""
