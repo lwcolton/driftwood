@@ -2,7 +2,7 @@ Table of Contents
 =================
 
 .. toctree::
-    :titlesonly:
+    :maxdepth: 2
 
     Adapters <driftwood.adapters>
     Formatters <driftwood.formatters>
