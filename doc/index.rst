@@ -6,5 +6,3 @@ Table of Contents
 
 .. toctree::
     :titlesonly:
-   
-   API Reference <modindex>
