@@ -1,8 +1,4 @@
-Driftwood
-=====================================
-
 .. include:: ../README.rst
-    :end-before: Documentation
 
 Table of Contents
 =================
