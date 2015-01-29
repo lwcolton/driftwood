@@ -342,12 +342,3 @@ epub_exclude_files = ['search.html']
 
 # If false, no index is generated.
 #epub_use_index = True
-
-
-def skip_member(app, what, name, obj, skip, options):
-    if name == "driftwood.adapters.status.StatusAdapter.log":
-        return True
-    return False
-
-def setup(app):
-    app.connect('autodoc-skip-member', skip_member)
