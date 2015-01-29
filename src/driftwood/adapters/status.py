@@ -1,10 +1,13 @@
+"""
+.. autoclass:: StatusUpdateAdapter
+  :exclude-members: log
+"""
 import logging
 
 class StatusUpdateAdapter(logging.LoggerAdapter):
     """Used to notify a callback about changes in the loglevel of a program.
 
     .. automethod:: __init__
-    :exclude-members: log
     """
     def __init__(self, status_update_func, logger, extra={}):
         """
