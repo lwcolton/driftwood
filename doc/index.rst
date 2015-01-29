@@ -2,12 +2,13 @@ Table of Contents
 =================
 
 .. toctree::
-    :maxdepth: 2
     :titlesonly:
 
     Adapters <driftwood.adapters>
     Formatters <driftwood.formatters>
     Handlers <driftwood.handlers>
+
+* :ref:`API reference <modindex>`
 
 .. include:: ../README.rst
     :start-after: `Full Documentation <http://driftwood.readthedocs.org/en/latest/>`_
