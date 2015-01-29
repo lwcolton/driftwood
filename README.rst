@@ -35,7 +35,7 @@ Assumes you have Driftwood already installed
 Examples
 --------
 
-`JSON Formatter <http://driftwood.readthedocs.org/en/test_docs/driftwood.formatters.html#driftwood.formatters.json.JSONFormatter>`_
+`JSON Formatter <http://driftwood.readthedocs.org/en/latest/driftwood.formatters.html#driftwood.formatters.json.JSONFormatter>`_
 ==============
 This code example:
 
