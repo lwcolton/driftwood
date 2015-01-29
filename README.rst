@@ -13,17 +13,17 @@ Get Driftwood
 -------------
 .. code-block:: shell
 
-pip install git+https://github.com/HurricaneLabs/driftwood.git
+    pip install git+https://github.com/HurricaneLabs/driftwood.git
 
 Running the tests
 -----------------
 Assumes you have Driftwood already installed
 
 .. code-block:: shell
-pip install nose2
-git clone https://github.com/HurricaneLabs/driftwood.git
-cd driftwood/test/unit
-nose2
+    pip install nose2
+    git clone https://github.com/HurricaneLabs/driftwood.git
+    cd driftwood/test/unit
+    nose2
 
 Examples
 ========
