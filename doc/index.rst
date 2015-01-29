@@ -1,11 +1,12 @@
-.. include:: ../README.rst
-    :start-after: `Full Documentation <http://driftwood.readthedocs.org/en/latest/>`_
-
 Table of Contents
 =================
 
 .. toctree::
     :titlesonly:
 
-    driftwood
-    * :ref:`API reference <modindex>`
+    Adapters <driftwood.adapters>
+
+.. include:: ../README.rst
+    :start-after: `Full Documentation <http://driftwood.readthedocs.org/en/latest/>`_
+
+
