@@ -6,6 +6,15 @@ Driftwood
 =========
 **A collection of python logging extensions**
 
+Features
+--------
+- Compatible with Python 3 (only)
+- Provides Dictionary, JSON, and MongoDB logging
+- Features for logging custom attributes
+- Can notify of status changes based on the level of messages being logged
+
+
+
 Installing
 ==========
 
@@ -25,6 +34,8 @@ Assumes you have Driftwood already installed
     git clone https://github.com/HurricaneLabs/driftwood.git
     cd driftwood/test/unit
     nose2
+
+
 
 Examples
 ========
@@ -49,4 +60,6 @@ Produces (as a string, not a dict):
 .. code-block:: json
 
     {"created": 1422386241.4394472, "pathname": "<stdin>", "message": "uh oh", "threadName": "MainThread", "levelname": "WARNING", "process": 4384, "module": "<stdin>", "thread": 139785634490176, "levelno": 30, "msecs": 439.44716453552246, "filename": "<stdin>", "lineno": 1, "relativeCreated": 52455.650329589844, "funcName": "<module>", "name": "test"}
+
+
 
