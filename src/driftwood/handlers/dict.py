@@ -10,8 +10,7 @@ class DictHandler(logging.Handler):
     """
     def __init__(self, *args, regular_attrs=None, extra_attrs=[], **kwargs):
         """
-        Args:
-            extra_attrs (list): String names of extra attributes that may exist on the log record.
+        :param list extra_attrs: String names of extra attributes that may exist on the log record.
         """
         super().__init__(*args, **kwargs)
         self._dict_formatter = DictFormatter(regular_attrs=regular_attrs,

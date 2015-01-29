@@ -7,8 +7,7 @@ class StatusUpdateAdapter(logging.LoggerAdapter):
     """
     def __init__(self, status_update_func, logger, extra={}):
         """
-        Args:
-            status_update_func (callable): Called when the status changes.
+            :param status_update_func callable: Called when the status changes.
                 See :meth:`status_update_func` for the arguments this function
                 should accept.
         """
@@ -26,11 +25,10 @@ class StatusUpdateAdapter(logging.LoggerAdapter):
     def status_update_func(levelno, levelname):
         """
         Example interface for the update function you pass to :meth:`__init__`.
-
-        Args:
-            levelno (int): Logging level numeric value of this call to the LoggerAdapter.
-                See `Python Logging Levels <https://docs.python.org/3.4/library/logging.html#logging-levels>`_
-            levelname (str): Logging level name of this call to the LoggerAdapter.
-                See `Python Logging Levels <https://docs.python.org/3.4/library/logging.html#logging-levels>`_
+        
+        :param levelno int: Logging level numeric value of this call to the LoggerAdapter.
+            See `Python Logging Levels <https://docs.python.org/3.4/library/logging.html#logging-levels>`_
+        :param levelname str: Logging level name of this call to the LoggerAdapter.
+            See `Python Logging Levels <https://docs.python.org/3.4/library/logging.html#logging-levels>`_
         """
         raise NotImplementedError
