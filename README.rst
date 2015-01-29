@@ -15,6 +15,6 @@ Examples
 
 JSON Formatter
 --------------
-.. code:: python
+.. code-block:: python
     import logging
     from driftwood.formatters.json import JSONFormatter
