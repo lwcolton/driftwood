@@ -8,4 +8,4 @@ Table of Contents
     :titlesonly:
 
     driftwood
-    api <modindex>
+    * :ref:`API reference <modindex>`
