@@ -6,14 +6,14 @@ class StatusUpdateAdapter(logging.LoggerAdapter):
     Will call a callback function when a program logs a message of 
     increasing severity.
     """
-    def __init__(self, status_update_func, *args, **kwargs):
+    def __init__(self, status_update_func, logger, extra={}):
         """
         Args:
             status_update_func (callable): Called when the status changes.
                 See :meth:`status_update_func` for the arguments this function
                 should accept.
         """
-        super().__init__(*args, **kwargs)
+        super().__init__(logger, extra)
         self.status_num = 0
         self.status_update_func = status_update_func
 
