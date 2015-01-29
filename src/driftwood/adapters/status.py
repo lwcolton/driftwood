@@ -1,10 +1,7 @@
 import logging
 
 class StatusUpdateAdapter(logging.LoggerAdapter):
-    """Used to notify a callback about changes in the loglevel of a program.
-
-    .. automethod:: __init__
-    """
+    """Used to notify a callback about changes in the loglevel of a program."""
     def __init__(self, status_update_func, logger, extra={}):
         """
             :param status_update_func callable: Called when the status changes.

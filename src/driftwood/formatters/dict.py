@@ -1,10 +1,7 @@
 import logging
 
 class DictFormatter(logging.Formatter):
-    """Used for formatting log records into a dict.
-
-    .. automethod:: __init__
-    """
+    """Used for formatting log records into a dict."""
     def __init__(self, *args, regular_attrs=None, extra_attrs=[], **kwargs):
         """
         :param list regular_attrs: A list of strings specifying built-in python
