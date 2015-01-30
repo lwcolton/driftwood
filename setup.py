@@ -7,7 +7,8 @@ with open(os.path.join(here, "version"), "r") as version_handle:
     version = version_handle.read().strip()
 
 readme_path = os.path.join(here, 'README.rst')
-readme = open(readme_path).read()
+with open(readme_path, "r") as readme_handle:
+    readme = readme_handle.read()
 
 setup(
 	name = "driftwood",
