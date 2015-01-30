@@ -6,8 +6,6 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, "version"), "r") as version_handle:
     version = version_handle.read().strip()
 
-print("Driftwood Installer {}".format(version))
-
 setup(
 	name = "driftwood",
 	version = version,
