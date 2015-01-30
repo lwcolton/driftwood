@@ -29,8 +29,9 @@ class BaseLogRecord(mongoengine.Document):
 
 class LogRecord(BaseLogRecord):
     """
-    Maybe not be subclassed.  Is used as the default document for
-        log records if no other is provided.
+    Is used as the default document for log records.
+
+    May not be sublassed.
     """
     pass
 
