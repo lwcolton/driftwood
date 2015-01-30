@@ -45,7 +45,10 @@ extensions = [
 
 autoclass_content = 'both'
 
-intersphinx_mapping = {'python': ('http://docs.python.org/3.4', None)}
+intersphinx_mapping = {
+    "python": ("http://docs.python.org/3.4", None),
+    "mongoengine": ("http://mongoengine-odm.readthedocs.org/en/latest/", None),
+}
 
 
 
