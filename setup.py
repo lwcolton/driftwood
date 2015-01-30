@@ -16,6 +16,5 @@ setup(
 	package_dir = {"":"src"},
 	packages = find_packages("src"),
     install_requires = ["mongoengine"],
-    download_url = "https://github.com/HurricaneLabs/driftwood/tarball/{0}".format(version)
 )
 
