@@ -6,8 +6,7 @@ import uuid
 
 from nose2.tools import params
 
-from driftwood.handlers.dict import DictHandler
-from driftwood.handlers.mongo import MongoHandler
+from driftwood.handlers import DictHandler, MongoHandler
 from driftwood_test import util
 
 class TestDictHandler:

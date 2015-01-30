@@ -2,7 +2,7 @@ import logging
 
 import mongoengine
 
-from driftwood.handlers.dict import DictHandler
+from driftwood.handlers import DictHandler
 
 class BaseLogRecord(mongoengine.Document):
     """Template for log records.

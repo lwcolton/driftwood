@@ -1,6 +1,6 @@
 import logging
 
-from driftwood.formatters.dict import DictFormatter
+from driftwood.formatters import DictFormatter
 
 class DictHandler(logging.Handler):
     """Formats log records into a dict.

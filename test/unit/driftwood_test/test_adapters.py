@@ -2,7 +2,7 @@ import logging
 from unittest import mock
 import uuid
 
-from driftwood.adapters.status import StatusUpdateAdapter
+from driftwood.adapters import StatusUpdateAdapter
 
 class TestStatusAdapter:
     def test_1(self):

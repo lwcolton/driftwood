@@ -6,8 +6,7 @@ import uuid
 
 from nose2.tools import params
 
-from driftwood.formatters.dict import DictFormatter
-from driftwood.formatters.json import JSONFormatter
+from driftwood.formatters import DictFormatter, JSONFormatter
 from driftwood_test import util
 
 class TestDictFormatter:
