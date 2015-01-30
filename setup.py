@@ -9,7 +9,7 @@ with open(os.path.join(here, "version"), "r") as version_handle:
 long_description = """
 `Github <https://github.com/HurricaneLabs/driftwood>`_
 ------------------------------------------------------
-`Documentation <http://driftwood.readthedocs.org/en/latest/`_
+`Documentation <http://driftwood.readthedocs.org/en/latest/>`_
 -------------------------------------------------------------
 """
 
