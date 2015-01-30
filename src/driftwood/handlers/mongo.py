@@ -39,7 +39,7 @@ class MongoHandler(DictHandler):
     """A handler that will log to MongoDB for you."""
     def __init__(self, *args, document=LogRecord, **kwargs):
         """
-        :param document mongoengine.Document: The document that should be used for storing log messages.
+        :param mongoengine.Document document: The document that should be used for storing log messages.
             Defaults to :class:`driftwood.handlers.mongo.LogRecord`.
             If you are using extra_attrs parameter of :class:`~driftwood.handlers.dict.DictHandler`,
             you must define your own document.
