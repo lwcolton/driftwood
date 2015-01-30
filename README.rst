@@ -19,8 +19,6 @@ Get Driftwood
 
     pip install git+https://github.com/HurricaneLabs/driftwood.git
 
-**Note:** To use mongodb logging, you must install the mongoengine module.  Tested with 0.8.7
-
 Run the tests
 =============
 Assumes you have Driftwood already installed
