@@ -57,3 +57,36 @@ Produces (as a string, not a dict):
 
     {"created": 1422386241.4394472, "pathname": "<stdin>", "message": "uh oh", "threadName": "MainThread", "levelname": "WARNING", "process": 4384, "module": "<stdin>", "thread": 139785634490176, "levelno": 30, "msecs": 439.44716453552246, "filename": "<stdin>", "lineno": 1, "relativeCreated": 52455.650329589844, "funcName": "<module>", "name": "test"}
 
+`MongoHandler <http://driftwood.readthedocs.org/en/latest/driftwood.handlers.html#driftwood.handlers.mongo.MongoHandler>`_
+=====================
+This handler is used to log records to MongoDB.  The following code:
+
+.. code-block:: python
+
+    import logging
+    import os
+
+    from driftwood.handlers.mongo import MongoHandler, LogRecord
+    import mongoengine
+
+    mongoengine.connect("testdb", host=os.environ["MONGO_PORT_27017_TCP_ADDR"])
+    MongoClient('172.17.0.50', 27017)
+
+    mongo_handler = MongoHandler()
+    log = logging.getLogger("test")
+    log.addHandler(mongo_handler)
+
+    log.error("something bad happened")
+    print(LogRecord.objects)
+    print(LogRecord.objects[0].message)
+
+Produces:
+
+.. code-block:: python
+
+    [<LogRecord: LogRecord object>]
+    something bad happened
+
+Your message has been logged to mongodb and `includes all standard logging attributes except asctime. <http://driftwood.readthedocs.org/en/latest/driftwood.handlers.html#driftwood.handlers.mongo.BaseLogRecord>`_
+See the full documentation for `including extra attributes <http://driftwood.readthedocs.org/en/latest/driftwood.handlers.html#driftwood.handlers.mongo.MongoHandler>`_, as provided by the `DictHandler <http://driftwood.readthedocs.org/en/latest/driftwood.handlers.html#driftwood.handlers.dict.DictHandler>`_ base class.
+
