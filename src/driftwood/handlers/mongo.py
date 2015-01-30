@@ -28,10 +28,9 @@ class BaseLogRecord(mongoengine.Document):
     module = mongoengine.StringField()
 
 class LogRecord(BaseLogRecord):
-    """Like :py:class:`driftwood.handlers.mongo.BaseLogRecord`.
-
-    Maybe not be subclassed.  Is used as the default document
-        if no other is provided.
+    """
+    Maybe not be subclassed.  Is used as the default document for
+        log records if no other is provided.
     """
     pass
 
