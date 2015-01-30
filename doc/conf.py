@@ -24,7 +24,8 @@ sys.path.insert(0, os.path.abspath('../src'))
 sys.path.insert(0, os.path.abspath('src'))
 
 mock_mod_dict = {}
-for mod_name in ["mongoengine"]:
+#Add mocked dependencies here
+for mod_name in []:
     mock_mod_dict[mod_name] = mock.MagicMock()
 imports_patch = mock.patch.dict("sys.modules", values=mock_mod_dict).start()
 

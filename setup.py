@@ -17,5 +17,6 @@ setup(
 	author_email = "colton@hurricanelabs.com",
 	package_dir = {"":"src"},
 	packages = find_packages("src"),
+    install_requires = ["mongoengine"]
 )
 
