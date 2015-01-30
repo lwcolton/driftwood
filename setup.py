@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 from codecs import open
 import os
 
-here = path.abspath(path.dirname(__file__))
+here = os.path.abspath(path.dirname(__file__))
 with open(os.path.join(here, "version"), "r") as version_handle:
     version = version_handle.read().strip()
 
