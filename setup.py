@@ -6,8 +6,12 @@ here = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(here, "version"), "r") as version_handle:
     version = version_handle.read().strip()
 
-long_description = """Github: https://github.com/HurricaneLabs/driftwood
-Documentation: http://driftwood.readthedocs.org/en/latest/"""
+long_description = """
+`Github <https://github.com/HurricaneLabs/driftwood>`_
+------------------------------------------------------
+`Documentation <http://driftwood.readthedocs.org/en/latest/`_
+-------------------------------------------------------------
+"""
 
 setup(
 	name = "driftwood",
