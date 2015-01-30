@@ -1,6 +1,6 @@
 import json
 
-from driftwood.formatters.dict import DictFormatter
+from .dict import DictFormatter
 
 class JSONFormatter(DictFormatter):
     """Formats messages as JSON.

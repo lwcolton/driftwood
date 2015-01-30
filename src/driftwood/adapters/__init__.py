@@ -1,3 +1,3 @@
-from status import StatusUpdateAdapter
+from .status import StatusUpdateAdapter
 
 __all__ = ["StatusUpdateAdapter"]
