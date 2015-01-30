@@ -90,3 +90,34 @@ Produces:
 Your message has been logged to mongodb and `includes all standard logging attributes except asctime. <http://driftwood.readthedocs.org/en/latest/driftwood.handlers.html#driftwood.handlers.mongo.BaseLogRecord>`_
 See the full documentation for `including extra attributes <http://driftwood.readthedocs.org/en/latest/driftwood.handlers.html#driftwood.handlers.mongo.MongoHandler>`_, as provided by the `DictHandler <http://driftwood.readthedocs.org/en/latest/driftwood.handlers.html#driftwood.handlers.dict.DictHandler>`_ base class.
 
+`StatusUpdateAdapter <http://driftwood.readthedocs.org/en/latest/driftwood.adapters.html#driftwood.adapters.status.StatusUpdateAdapter>`_
+=========================
+This logging.LoggerAdapter is used to track the status of an operation based on the level of messages being logged.
+Every time a message is logged, if the level is higher than any previous message, a callback is triggered to alert of the status change.
+
+.. code-block:: python
+
+    import logging
+
+    from driftwood.adapters import StatusUpdateAdapter
+
+    def status_update(levelno, levelname):
+    ...     print("The status has changes to {0}".format(levelname))
+    ... 
+    log = logging.getLogger("test")
+    log.setLevel(logging.CRITICAL)
+    adapter = StatusUpdateAdapter(status_update, log)
+
+    adapter.info("info test")
+    adapter.warning("warning test")
+    adapter.error("error test")
+
+    adapter.info("won't trigger the callback")
+
+Produces::
+
+    The status has changes to INFO
+    The status has changes to WARNING
+    The status has changes to ERROR
+
+
