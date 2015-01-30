@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 from codecs import open
-from os import path
+import os
 
 here = path.abspath(path.dirname(__file__))
-with open(path.join(here, "version"), "r") as version_handle:
+with open(os.path.join(here, "version"), "r") as version_handle:
     version = version_handle.read().strip()
 
 readme_path = os.path.join(here, 'README.rst')
