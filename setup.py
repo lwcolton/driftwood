@@ -6,15 +6,14 @@ here = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(here, "version"), "r") as version_handle:
     version = version_handle.read().strip()
 
-readme_path = os.path.join(here, 'README.rst')
-with open(readme_path, "r") as readme_handle:
-    readme = readme_handle.read()
+long_description = """Github: https://github.com/HurricaneLabs/driftwood
+Documentation: http://driftwood.readthedocs.org/en/latest/"""
 
 setup(
 	name = "driftwood",
 	version = version,
 	description = "A collection of python logging extensions",
-    long_description = readme,
+    long_description = long_description,
 	url = "https://github.com/HurricaneLabs/driftwood",
 	author = "Colton Leekley-Winslow",
 	author_email = "colton@hurricanelabs.com",
