@@ -21,6 +21,6 @@ git commit -m "Release $new_version"
 git tag -a $new_version -m "Release $new_version"
 git checkout master
 git merge develop
-git push origin master
+git push origin master --tags
 git checkout develop
 git push origin develop
