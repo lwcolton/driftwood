@@ -40,7 +40,7 @@ This code example:
 .. code-block:: python
 
     import logging
-    from driftwood.formatters.json import JSONFormatter
+    from driftwood.formatters import JSONFormatter
     log = logging.getLogger("test")
     handler = logging.StreamHandler()
     json_formatter = JSONFormatter()
