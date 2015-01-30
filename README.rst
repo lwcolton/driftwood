@@ -41,10 +41,13 @@ This code example:
 
     import logging
     from driftwood.formatters import JSONFormatter
+
     log = logging.getLogger("test")
     handler = logging.StreamHandler()
+
     json_formatter = JSONFormatter()
     handler.setFormatter(json_formatter)
+
     log.addHandler(handler)
     log.warning("uh oh")
 
