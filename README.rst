@@ -102,8 +102,8 @@ Every time a message is logged, if the level is higher than any previous message
     from driftwood.adapters import StatusUpdateAdapter
 
     def status_update(levelno, levelname):
-    ...     print("The status has changed to {0}".format(levelname))
-    ... 
+        print("The status has changed to {0}".format(levelname))
+
     log = logging.getLogger("test")
     log.setLevel(logging.CRITICAL)
     adapter = StatusUpdateAdapter(status_update, log)
