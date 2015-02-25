@@ -23,14 +23,13 @@ If you wish to use the MongoDB functionality, you must also have mongoengine ins
 
 Run the tests
 =============
-Assumes you have Driftwood already installed
+You must install tox, then run:
 
 .. code-block:: shell
 
-    pip install nose2
     git clone https://github.com/HurricaneLabs/driftwood.git
-    cd driftwood/test/unit
-    nose2
+    cd driftwood
+    tox
 
 Examples
 --------
