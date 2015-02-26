@@ -19,7 +19,7 @@ Get Driftwood
 
     pip install driftwood
 
-If you wish to use the MongoDB functionality, you must also have mongoengine installed.  Version 0.9.x is recommended.
+If you wish to use the MongoDB functionality, you must also have mongoengine installed.  Version 0.8.7 is recommended.
 
 Run the tests
 =============
