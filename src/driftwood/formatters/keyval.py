@@ -6,6 +6,9 @@ from .dict import DictFormatter
 
 class KeyValFormatter(DictFormatter):
     """
+    Outputs records in the following format:
+        ``message='foo',created='1429896792.703648'``
+
     Note:
         This formatter will replace spaces with underscores in log record keys,
         and remove single quotes in record values.
