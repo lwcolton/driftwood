@@ -20,6 +20,14 @@ driftwood.formatters.json module
     :undoc-members:
     :show-inheritance:
 
+driftwood.formatters.keyval module
+----------------------------------
+
+.. automodule:: driftwood.formatters.keyval
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
 Module contents
 ---------------
