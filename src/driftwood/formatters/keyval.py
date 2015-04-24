@@ -18,6 +18,7 @@ class KeyValFormatter(DictFormatter):
             msg_val = str(msg_val)
             msg_key = msg_key.replace(" ", "_")
             msg_val = msg_val.replace("'", "")
-            msg_str += "{0}='{1}' ".format(msg_key, msg_val)
-        msg_str = msg_str.strip()
+            msg_str += "{0}='{1}',".format(msg_key, msg_val)
+        if msg_str[-1] == ",":
+            msg_str = msg_str[:-1]
         return msg_str
