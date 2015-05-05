@@ -16,7 +16,10 @@ class KeyValFormatter(DictFormatter):
     def format(self, *args, **kwargs):
         msg_dict = super().format(*args, **kwargs)
         msg_str = ""
-        for msg_key, msg_val in msg_dict.items(): 
+        for msg_key in self.useful_attrs:
+            if msg_key not in msg_dict:
+                continue
+            msg_val = msg_dict[msg_key]
             msg_key = str(msg_key)
             msg_val = str(msg_val)
             msg_key = msg_key.replace(" ", "_")

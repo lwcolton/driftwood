@@ -48,13 +48,9 @@ class TestKeyValFormatter(TestCase):
 
     def test_format_2(self):
         record = util.random_log_record()
-        formatter = KeyValFormatter(regular_attrs = ["message", "created"])
+        record.foo = "bar"
+        formatter = KeyValFormatter(regular_attrs = ["message", "created"], extra_attrs=["foo"])
         keyval_result = formatter.format(record)
-        if keyval_result.startswith("message"):
-            self.assertEquals(keyval_result, "message='{0}',created='{1}'".format(
-                record.message, record.created))
-        else:
-            self.assertEquals(keyval_result, "created='{0}',message='{1}'".format(
-                record.created, record.message)) 
-        
+        self.assertEquals(keyval_result, "message='{0}',created='{1}',foo='bar'".format(
+            record.message, record.created))
         

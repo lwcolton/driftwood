@@ -14,7 +14,7 @@ class DictFormatter(logging.Formatter):
         """
         super().__init__(*args, **kwargs)
         if regular_attrs == None:
-            regular_attrs = ["name","levelno","levelname","pathname","filename","module","lineno",
+            regular_attrs = ["name","message","levelno","levelname","pathname","filename","module","lineno",
                 "funcName","created","asctime","msecs","relativeCreated","thread","threadName",
                 "process"]
         self.useful_attrs = regular_attrs + extra_attrs
