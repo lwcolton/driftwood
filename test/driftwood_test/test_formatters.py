@@ -31,6 +31,13 @@ class TestDictFormatter(TestCase):
         self.assertEquals("message", dict_result.popitem(last=False)[0])
         for key in expected_order:
             self.assertEquals(key, dict_result.popitem(last=False)[0])
+
+    def test_format_ordered_2(self):
+        record = util.random_log_record()
+        formatter = DictFormatter( preserve_order=True, specific_order=["thread"])
+        dict_result = formatter.format(record)
+        self.assertEquals("thread", dict_result.popitem(last=False)[0])
+        self.assertEquals(bool(len(dict_result) > 0), True)
         
 class TestJSONFormatter:
     @params(*[{uuid.uuid4().hex:uuid.uuid4().hex for x in range(0,random.randrange(5,10))} for x in range(0,6)])

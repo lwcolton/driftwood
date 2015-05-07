@@ -75,11 +75,12 @@ class DictFormatter(logging.Formatter):
             useful_attrs_set = set(useful_attrs)
             if self.specific_order is not None:
                 specific_order = self.specific_order
-                unordered_keys = set(specific_order) - useful_attrs_set
+                unordered_keys = useful_attrs_set - set(specific_order)
                 if unordered_keys:
                     specific_order += sorted(list(unordered_keys), key=str.lower)
             else:
                 specific_order = self.regular_attrs + sorted(extra_attrs, key=str.lower)
+
                 
             msg_proplist = []
             for attr_name in specific_order:
