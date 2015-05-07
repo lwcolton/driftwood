@@ -4,12 +4,13 @@ import random
 from unittest import mock, TestCase
 import uuid
 
+import fauxfactory
 from nose2.tools import params
 
 from driftwood.formatters import DictFormatter, JSONFormatter, KeyValFormatter
 from driftwood_test import util
 
-class TestDictFormatter:
+class TestDictFormatter(TestCase):
     @params(*[{uuid.uuid4().hex:uuid.uuid4().hex for x in range(0,random.randrange(5,10))} for x in range(0,6)])
     def test_format_1(self, extra): 
         record = util.random_log_record(extra=extra)
@@ -19,6 +20,17 @@ class TestDictFormatter:
             assert key in dict_result, "Result missing regular arg key '{0}'".format(key)
         for key in extra:
             assert key in dict_result, "Result missing extra arg key '{0}'".format(key)
+
+    def test_format_ordered_1(self):
+        extra = {fauxfactory.gen_string("alphanumeric", random.randint(1,30)):fauxfactory.gen_string(
+            "alphanumeric", random.randint(1,30)) for x in range(0, random.randint(4,8))}
+        expected_order = sorted(list(extra.keys()), key=str.lower)
+        record = util.random_log_record(extra=extra)
+        formatter = DictFormatter(regular_attrs=["message"], preserve_order=True)
+        dict_result = formatter.format(record)
+        self.assertEquals("message", dict_result.popitem(last=False)[0])
+        for key in expected_order:
+            self.assertEquals(key, dict_result.popitem(last=False)[0])
         
 class TestJSONFormatter:
     @params(*[{uuid.uuid4().hex:uuid.uuid4().hex for x in range(0,random.randrange(5,10))} for x in range(0,6)])
