@@ -58,6 +58,8 @@ class DictFormatter(logging.Formatter):
         message = super().format(record)
         record_dict = record.__dict__
         record_dict["message"] = message
+        if "asctime" not in record_dict:
+            record_dict["asctime"] = self.formatTime(record)
     
         if self.extra_attrs is not None:
             extra_attrs = self.extra_attrs
