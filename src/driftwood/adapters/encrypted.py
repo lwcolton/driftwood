@@ -50,7 +50,7 @@ class EncryptedAdapter(logging.LoggerAdapter):
             if attr_key not in plaintext_attrs:
                 extra[extra_key] = self.encrypt(attr_value)
         kwargs["extra"] = extra
-        return mmessage, kwargs
+        return message, kwargs
 
         
     def encrypt(self, plaintext_data):
