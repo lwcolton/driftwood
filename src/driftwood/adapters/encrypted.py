@@ -91,6 +91,6 @@ class Decrypter:
         )
     
     def decrypt(self, log_record):
-        for field_name in extra["encrypted_fields"]:
+        for field_name in log_record["encrypted_fields"]:
             log_record[field_name] = self.private_key.decrypt(log_record[field_name], self.padding)
 
