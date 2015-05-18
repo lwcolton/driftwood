@@ -77,7 +77,7 @@ class EncryptedAdapter(logging.LoggerAdapter):
         encrypted_bytes = self.public_key.encrypt(prepared_data, self.padding)
         return base64.b64encode(encrypted_bytes).decode("utf-8")
 
-def Decrypter:
+class Decrypter:
     def __init__(self, private_rsa_key, password=None):
         self.private_key = load_pem_private_key(
             private_rsa_key,
