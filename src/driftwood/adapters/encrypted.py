@@ -73,8 +73,9 @@ class EncryptedAdapter(logging.LoggerAdapter):
         return self.encrypt(plaintext_message)
 
     def encrypt(self, plaintext_data):
-        prepared_data = str(plaintext_data).encode("utf-8")
-        encrypted_bytes = self.public_key.encrypt(prepared_data, self.padding)
+        if type(plaintext_data) != bytes:
+            plaintext_data = str(plaintext_data).encode("utf-8")
+        encrypted_bytes = self.public_key.encrypt(plaintext_data, self.padding)
         return base64.b64encode(encrypted_bytes).decode("utf-8")
 
 class Decrypter:
@@ -92,5 +93,7 @@ class Decrypter:
     
     def decrypt(self, log_record):
         for field_name in log_record["encrypted_fields"]:
-            log_record[field_name] = self.private_key.decrypt(log_record[field_name], self.padding)
+            encrypted_value = base64.b64decode(log_record[field_name])
+            decrypted_value = self.private_key.decrypt(encrypted_value, self.padding)
+            log_record[field_name] = decrypted_value
 
