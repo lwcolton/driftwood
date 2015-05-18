@@ -1,10 +1,11 @@
-from base64 import b64encode
+import base64
+import hashlib
 import logging
 
 from cryptography.hazmat.backends.openssl import backend as openssl_backend
 from cryptography.hazmat.primitives.asymmetric.padding import OAEP, MGF1
 from cryptography.hazmat.primitives.hashes import SHA1
-from cryptography.hazmat.primitives.serialization import load_ssh_public_key
+from cryptography.hazmat.primitives.serialization import load_ssh_public_key, load_pem_private_key
 
 class EncryptedAdapter(logging.LoggerAdapter):
     """Used to notify a callback about changes in the loglevel of a program."""
@@ -19,7 +20,8 @@ class EncryptedAdapter(logging.LoggerAdapter):
         self.plaintext_attrs = plaintext_attrs
         with open(public_key_file, "rb") as key_file_handle:
             raw_public_key = key_file_handle.read()
-        self.public_key = load_ssh_public_key(raw_public_key, openssl_backend)
+        self.public_key, self.fingerprint = self.load_key(raw_public_key)
+
         self.padding = OAEP(
             mgf=MGF1(algorithm=SHA1()),
             algorithm=SHA1(),
@@ -33,29 +35,62 @@ class EncryptedAdapter(logging.LoggerAdapter):
         force_encrypt = kwargs.pop("force_encrypt", [])
         format_args = kwargs.pop("format_args", [])
         format_keywords = kwargs.pop("format_keywords", {})
+        encrypted_fields = []
         if "message" in force_encrypt:
-            message = self.encrypt(plaintext_message)
+            message = self.encrypt_message(plaintext_message, encrypted_fields)
         elif "message" in plaintext_attrs:
             message = plaintext_message
         elif self.plaintext_static_messages:
             if format_args or format_keywords:
-                message = self.encrypt(plaintext_message)
+                message = self.encrypt_message(plaintext_message, encrypted_fields)
             else:
                 message = plaintext_message
         else:
-            message = self.encrypt(plaintext_message)
+            message = self.encrypt_message(plaintext_message, encrypted_fields)
 
         extra = self.extra.copy()
         extra.update(kwargs.get("extra", {}))
         for attr_key, attr_value in extra.items():
             if attr_key not in plaintext_attrs:
                 extra[attr_key] = self.encrypt(attr_value)
+                encrypted_fields.append(attr_key)
+
+        extra["log_encryption_key"] = self.fingerprint
+        extra["encrypted_fields"] = encrypted_fields
+        
         kwargs["extra"] = extra
         return message, kwargs
 
-        
+    def load_key(self, key_data):
+        public_key = load_ssh_public_key(key_data, openssl_backend)
+        key_data_text = key_data.decode("utf-8").split(" ")[1]
+        fp_plain = hashlib.md5(base64.b64decode(key_data_text)).hexdigest()
+        fingerprint = ':'.join(a+b for a, b in zip(fp_plain[::2], fp_plain[1::2]))
+        return public_key, fingerprint
+
+    def encrypt_message(self, plaintext_message, encrypted_fields):
+        encrypted_fields.append("message")
+        return self.encrypt(plaintext_message)
+
     def encrypt(self, plaintext_data):
         prepared_data = str(plaintext_data).encode("utf-8")
         encrypted_bytes = self.public_key.encrypt(prepared_data, self.padding)
-        return b64encode(encrypted_bytes).decode("utf-8")
-         
+        return base64.b64encode(encrypted_bytes).decode("utf-8")
+
+def Decrypter:
+    def __init__(self, private_rsa_key, password=None):
+        self.private_key = load_pem_private_key(
+            private_rsa_key,
+            password=password,
+            backend=openssl_backend
+        )
+        self.padding = OAEP(
+            mgf=MGF1(algorithm=SHA1()),
+            algorithm=SHA1(),
+            label=None
+        )
+    
+    def decrypt(self, log_record):
+        for field_name in extra["encrypted_fields"]:
+            log_record[field_name] = self.private_key.decrypt(log_record[field_name], self.padding)
+
