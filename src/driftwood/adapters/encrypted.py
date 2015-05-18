@@ -57,5 +57,5 @@ class EncryptedAdapter(logging.LoggerAdapter):
     def encrypt(self, plaintext_data):
         prepared_data = str(plaintext_data).encode("utf-8")
         encrypted_bytes = self.public_key.encrypt(prepared_data, self.padding)
-        return b64encode(encrypted_bytes)
+        return b64encode(encrypted_bytes).decode("utf-8")
          
