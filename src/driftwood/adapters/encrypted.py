@@ -1,4 +1,4 @@
-from binascii import hexlify
+from base64 import b64encode
 import logging
 
 from cryptography.hazmat.backends.openssl import backend as openssl_backend
@@ -57,5 +57,5 @@ class EncryptedAdapter(logging.LoggerAdapter):
     def encrypt(self, plaintext_data):
         prepared_data = str(plaintext_data).encode("utf-8")
         encrypted_bytes = self.public_key.encrypt(prepared_data, self.padding)
-        return hexlify(encrypted_bytes).decode("ascii")
+        return b64encode(encrypted_bytes)
          
