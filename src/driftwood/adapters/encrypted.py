@@ -2,7 +2,7 @@ import logging
 
 from cryptography.hazmat.backends.openssl import backend as openssl_backend
 from cryptography.hazmat.primitives.asymmetric.padding import OAEP, MGF1
-from cryptography.hazmat.primitives.hashes import SHA256
+from cryptography.hazmat.primitives.hashes import SHA1
 from cryptography.hazmat.primitives.serialization import load_ssh_public_key
 
 class EncryptedAdapter(logging.LoggerAdapter):
@@ -20,8 +20,8 @@ class EncryptedAdapter(logging.LoggerAdapter):
             raw_public_key = key_file_handle.read()
         self.public_key = load_ssh_public_key(raw_public_key, openssl_backend)
         self.padding = OAEP(
-            mgf=MGF1(algorithm=SHA256()),
-            algorithm=SHA256(),
+            mgf=MGF1(algorithm=SHA1()),
+            algorithm=SHA1(),
             label=None
         )
 
