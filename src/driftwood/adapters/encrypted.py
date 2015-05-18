@@ -48,7 +48,7 @@ class EncryptedAdapter(logging.LoggerAdapter):
         extra.update(kwargs.get("extra", {}))
         for attr_key, attr_value in extra.items():
             if attr_key not in plaintext_attrs:
-                extra[extra_key] = self.encrypt(attr_value)
+                extra[attr_key] = self.encrypt(attr_value)
         kwargs["extra"] = extra
         return message, kwargs
 
