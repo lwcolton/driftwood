@@ -4,6 +4,14 @@ driftwood.adapters package
 Submodules
 ----------
 
+driftwood.adapters.encrypted module
+-----------------------------------
+
+.. automodule:: driftwood.adapters.encrypted
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 driftwood.adapters.status module
 --------------------------------
 
