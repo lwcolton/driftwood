@@ -9,7 +9,7 @@ from cryptography.hazmat.primitives.serialization import load_ssh_public_key, lo
 
 class EncryptedAdapter(logging.LoggerAdapter):
     """Used to notify a callback about changes in the loglevel of a program."""
-    def __init__(self, logger, public_key_file, extra={}, plaintext_attrs=[], plaintext_static_messages=False):
+    def __init__(self, logger, public_key=None, public_key_path=None, extra={}, plaintext_attrs=[], plaintext_static_messages=False):
         """
             :param plaintext_attrs list: List of extra attributes not to encrypt
             :param plaintext_stati_messages bool: Do message formatting inside the adapter,
@@ -18,9 +18,12 @@ class EncryptedAdapter(logging.LoggerAdapter):
         super().__init__(logger, extra)
         self.plaintext_static_messages = plaintext_static_messages
         self.plaintext_attrs = plaintext_attrs
-        with open(public_key_file, "rb") as key_file_handle:
-            raw_public_key = key_file_handle.read()
-        self.public_key, self.fingerprint = self.load_key(raw_public_key)
+        if public_key is None and public_key_path is None:
+            raise ValueError("Must specify either public_key or public_key_path")
+        if publick_key_path is not None:
+            with open(public_key_path, "rb") as key_file_handle:
+                public_key = key_file_handle.read()
+        self.public_key, self.fingerprint = self.load_key(public_key)
 
         self.padding = OAEP(
             mgf=MGF1(algorithm=SHA1()),
