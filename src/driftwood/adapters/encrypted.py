@@ -20,7 +20,7 @@ class EncryptedAdapter(logging.LoggerAdapter):
         self.plaintext_attrs = plaintext_attrs
         if public_key is None and public_key_path is None:
             raise ValueError("Must specify either public_key or public_key_path")
-        if publick_key_path is not None:
+        if public_key_path is not None:
             with open(public_key_path, "rb") as key_file_handle:
                 public_key = key_file_handle.read()
         self.public_key, self.fingerprint = self.load_key(public_key)
