@@ -28,6 +28,14 @@ driftwood.formatters.keyval module
     :undoc-members:
     :show-inheritance:
 
+driftwood.formatters.splunk module
+----------------------------------
+
+.. automodule:: driftwood.formatters.splunk
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
 Module contents
 ---------------
