@@ -7,7 +7,7 @@ import uuid
 import fauxfactory
 from nose2.tools import params
 
-from driftwood.formatters import DictFormatter, JSONFormatter, KeyValFormatter
+from driftwood.formatters import DictFormatter, JSONFormatter, KeyValFormatter, SplunkFormatter
 from driftwood_test import util
 
 class TestDictFormatter(TestCase):
@@ -28,16 +28,16 @@ class TestDictFormatter(TestCase):
         record = util.random_log_record(extra=extra)
         formatter = DictFormatter(regular_attrs=["message"], preserve_order=True)
         dict_result = formatter.format(record)
-        self.assertEquals("message", dict_result.popitem(last=False)[0])
+        self.assertEqual("message", dict_result.popitem(last=False)[0])
         for key in expected_order:
-            self.assertEquals(key, dict_result.popitem(last=False)[0])
+            self.assertEqual(key, dict_result.popitem(last=False)[0])
 
     def test_format_ordered_2(self):
         record = util.random_log_record()
         formatter = DictFormatter( preserve_order=True, specific_order=["thread"])
         dict_result = formatter.format(record)
-        self.assertEquals("thread", dict_result.popitem(last=False)[0])
-        self.assertEquals(bool(len(dict_result) > 0), True)
+        self.assertEqual("thread", dict_result.popitem(last=False)[0])
+        self.assertEqual(bool(len(dict_result) > 0), True)
         
 class TestJSONFormatter:
     @params(*[{uuid.uuid4().hex:uuid.uuid4().hex for x in range(0,random.randrange(5,10))} for x in range(0,6)])
@@ -70,6 +70,12 @@ class TestKeyValFormatter(TestCase):
         record.foo = "bar"
         formatter = KeyValFormatter(regular_attrs = ["message", "created"], extra_attrs=["foo"])
         keyval_result = formatter.format(record)
-        self.assertEquals(keyval_result, "message='{0}',created='{1}',foo='bar'".format(
+        self.assertEqual(keyval_result, "message='{0}',created='{1}',foo='bar'".format(
             record.message, record.created))
-        
+
+class TestSplunkFormatter(TestCase):
+    def test_format_1(self):
+        formatter = SplunkFormatter()
+        record = util.random_log_record()
+        json_result = formatter.format(record)
+        self.assertEqual(json_result.startswith('{"created"'), True)

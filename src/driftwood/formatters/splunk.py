@@ -8,9 +8,9 @@ class SplunkFormatter(JSONFormatter):
     Accepts the same arguments as :class:`~driftwood.formatters.json.JSONFormatter`
     """
     def __init__(self, *args, **kwargs):
-        kwargs.set_default("preserve_order", True)
-        kwargs.set_default("specific_order", ["created"])
-        kwargs.set_default("regular_attrs", 
+        kwargs.setdefault("preserve_order", True)
+        kwargs.setdefault("specific_order", ["created"])
+        kwargs.setdefault("regular_attrs", 
             [
                 "created", "levelname", "message", "pathname",
                 "lineno", "funcName", "process", "levelno"
