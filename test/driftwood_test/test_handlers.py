@@ -2,7 +2,7 @@ import importlib
 import json
 import logging
 import random
-from unittest import mock
+import mock
 import uuid
 
 from nose2.tools import params

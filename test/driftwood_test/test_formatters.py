@@ -1,7 +1,8 @@
 import json
 import logging
 import random
-from unittest import mock, TestCase
+import mock
+from unittest import TestCase
 import uuid
 
 import fauxfactory

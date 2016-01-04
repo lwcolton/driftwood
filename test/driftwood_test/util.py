@@ -1,6 +1,6 @@
 import logging
 import random
-from unittest import mock
+import mock
 import uuid
 
 regular_attrs = ["name","levelno","levelname","pathname","filename","module","lineno",

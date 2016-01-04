@@ -1,5 +1,5 @@
 import logging
-from unittest import mock
+import mock
 import uuid
 
 from driftwood.adapters import StatusUpdateAdapter
